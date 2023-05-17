@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+        {% for flashed_message in get_flashed_messages() %}
+            <p style="color: white; background-color: #30799B">  {{ flashed_message }} </p>
+        {% endfor %}
+    </div>
+
+    <form method="post">
+        <label>
+            Заголовок
+            <div>
+                <input name="zagolovok" value="{{request.form['zagolovok'] or post.title }}">
+            </div>
+        </label>
+
+        <label>
+            Описание
+            <div>
+                <textarea name="opisanije">{{request.form['opisanije'] or post.content  }}</textarea>
+            </div>
+        </label>
+
+        <div>
+            <input type="submit",  value="Edit" >
+        </div>
+
+
+    </form>
+
+
+</body>
+</html>

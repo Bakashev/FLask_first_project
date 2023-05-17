@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        {% for post in posts %}
+            <h3> {{ post.title }}</h3>
+            <p>
+            <a href="/post/{{ post.id }}"> Просмотр заказа</a>
+            <a href="/post/{{ post.id }}/edit"> Редактировать</a>
+            </p>
+            <span> {{ post.created }}</span>
+            <p> {{ post.content }}</p>
+            <form method="post" action="/post/{{ post.id }}/delete">
+            <input type="submit", value="Delete">
+             </form>
+        {% endfor %}
+         
+    </div>
+</body>
+</html>
